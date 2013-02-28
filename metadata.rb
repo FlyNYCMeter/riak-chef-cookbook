@@ -26,6 +26,7 @@ depends           "apt"
 depends           "yum"
 depends           "build-essential"
 depends           "erlang"
+depends           "git"
 
 recipe            "riak", "Installs Riak from a package"
 recipe            "riak::source", "Installs Erlang and Riak from source"

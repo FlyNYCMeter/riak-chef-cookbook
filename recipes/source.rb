@@ -25,7 +25,7 @@ source_filename = "#{source_file}.tar.gz"
 
 include_recipe "git"
 include_recipe "build-essential"
-include_recipe "erlang::source"
+include_recipe "erlang"
 
 group "riak"
 
