@@ -27,12 +27,14 @@ include_recipe "git"
 include_recipe "build-essential"
 include_recipe "erlang::source"
 
-group "riak"
+group "riak" do
+  system true
+end
 
 user "riak" do
   gid "riak"
   shell "/bin/bash"
-  home "/var/lib/riak"
+  home node['riak']['data_dir']
   system true
 end
 

@@ -16,14 +16,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+default['riak']['package']['enterprise_key'] = ""
+default['riak']['package']['name'] = "riak"
 
 default['riak']['package']['url'] = "http://s3.amazonaws.com/downloads.basho.com/riak"
 default['riak']['package']['version']['major'] = "1"
-default['riak']['package']['version']['minor'] = "3"
-default['riak']['package']['version']['incremental'] = "0"
+default['riak']['package']['version']['minor'] = "4"
+default['riak']['package']['version']['incremental'] = "2"
 default['riak']['package']['version']['build'] = "1"
 default['riak']['package']['config_dir'] = "/etc/riak"
 default['riak']['package']['local_package'] = false
 
-default['riak']['package']['checksum']['fedora']['17']                = "3c8dfccab67e74a886c6bfdcaa7a0f81bcb29b2c656a41b99d50b58d329cdde3"
-default['riak']['package']['checksum']['local']                       = nil
+default['riak']['package']['checksum']['local'] = nil

@@ -1,5 +1,5 @@
 #
-# Author:: Benjamin Black (<b@b3k.us>) and Sean Cribbs (<sean@basho.com>)
+# Author:: Benjamin Black (<b@b3k.us>), Sean Cribbs (<sean@basho.com>), Seth Thomas (<sthomas@basho.com>)
 # Cookbook Name:: riak
 #
 # Copyright (c) 2013 Basho Technologies, Inc.
@@ -17,20 +17,20 @@
 # limitations under the License.
 #
 
+name              "riak"
 maintainer        "Basho Technologies, Inc."
 maintainer_email  "riak@basho.com"
 license           "Apache 2.0"
 description       "Installs and configures Riak distributed data store"
-version           "1.3.0"
-depends           "apt"
-depends           "yum"
-depends           "build-essential"
-depends           "erlang"
 depends           "git"
+version           "2.4.1"
 
 recipe            "riak", "Installs Riak from a package"
 recipe            "riak::source", "Installs Erlang and Riak from source"
 
+%w{apt yum build-essential erlang git ulimit}.each do |d|
+  depends d
+end
 
 %w{ubuntu debian centos redhat fedora}.each do |os|
   supports os
